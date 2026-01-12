@@ -1,0 +1,8 @@
+/* Custom lightweight styles - Tailwind handles most styling */
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+}
+
+/* small helper for focus states */
+:focus { outline: 2px solid rgba(14,165,164,0.25); outline-offset: 2px; }
