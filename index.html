@@ -4,7 +4,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Shreyansh Gupta — Portfolio</title>
-  <meta name="description" content="Portfolio of Shreyansh Gupta" />
+  <meta name="description" content="Portfolio of Shreyansh Gupta — frontend web developer building accessible, performant websites." />
+  <meta name="keywords" content="Shreyansh Gupta, portfolio, web developer, frontend, JavaScript, Tailwind" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Shreyansh Gupta — Portfolio" />
+  <meta property="og:description" content="Frontend web developer building accessible, performant websites." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -20,19 +31,20 @@
   <link rel="stylesheet" href="/src/styles.css" />
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased">
+  <a class="sr-only" href="#main">Skip to content</a>
   <header class="bg-white/60 backdrop-blur sticky top-0 z-30 shadow-sm">
     <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="#hero" class="font-semibold text-lg">Shreyansh Gupta</a>
-      <nav class="hidden md:flex gap-6 items-center">
+      <nav aria-label="Primary navigation" class="hidden md:flex gap-6 items-center">
         <a href="#about" class="hover:text-primary">About</a>
         <a href="#projects" class="hover:text-primary">Projects</a>
         <a href="#skills" class="hover:text-primary">Skills</a>
         <a href="#contact" class="hover:text-primary">Contact</a>
         <a href="#resume" class="px-3 py-1 border rounded text-sm hover:bg-primary hover:text-white">Resume</a>
       </nav>
-      <button id="navToggle" class="md:hidden px-2 py-1 rounded border">Menu</button>
+      <button id="navToggle" class="md:hidden px-2 py-1 rounded border" aria-expanded="false" aria-controls="mobileNav">Menu</button>
     </div>
-    <div id="mobileNav" class="md:hidden hidden border-t">
+    <div id="mobileNav" class="md:hidden hidden border-t" aria-hidden="true">
       <div class="px-6 py-4 flex flex-col gap-3">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
@@ -43,7 +55,7 @@
     </div>
   </header>
 
-  <main class="max-w-5xl mx-auto px-6 py-12">
+  <main id="main" class="max-w-5xl mx-auto px-6 py-12">
     <!-- Hero -->
     <section id="hero" class="flex flex-col md:flex-row items-center gap-8 py-12">
       <div class="flex-1">
@@ -54,7 +66,7 @@
           <a href="#contact" class="border px-4 py-2 rounded">Get in touch</a>
         </div>
       </div>
-      <div class="w-44 h-44 rounded-lg overflow-hidden shadow-lg bg-gray-100">
+      <div class="w-44 h-44 rounded-lg overflow-hidden shadow-lg bg-gray-100" aria-hidden="true">
         <img alt="avatar placeholder" src="https://placehold.co/300x300/png?text=Avatar" class="w-full h-full object-cover" />
       </div>
     </section>
@@ -65,47 +77,28 @@
       <p class="mt-4 text-gray-600">I'm a web developer focused on building clean, accessible, and performant websites. I enjoy turning ideas into reality using modern web tools. This template is scaffolded with Tailwind and plain HTML/JS so it's easy to customize and deploy to GitHub Pages.</p>
     </section>
 
-    <!-- Projects -->
+    <!-- Projects (dynamic) -->
     <section id="projects" class="py-12 border-t">
       <h2 class="text-2xl font-semibold">Projects</h2>
       <p class="mt-2 text-gray-600">A few examples — replace these with your real projects and links.</p>
-      <div class="mt-6 grid gap-6 grid-cols-1 md:grid-cols-3">
-        <article class="border rounded-lg overflow-hidden">
-          <img src="https://placehold.co/600x400?text=Project+1" alt="Project 1" class="w-full h-40 object-cover" />
-          <div class="p-4">
-            <h3 class="font-semibold">Project One</h3>
-            <p class="text-sm text-gray-600 mt-2">Short description of project one. Add technologies and the repo or live link.</p>
-            <div class="mt-4 flex gap-2">
-              <a href="#" class="text-primary text-sm">Live</a>
-              <a href="#" class="text-sm">Repo</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="border rounded-lg overflow-hidden">
-          <img src="https://placehold.co/600x400?text=Project+2" alt="Project 2" class="w-full h-40 object-cover" />
-          <div class="p-4">
-            <h3 class="font-semibold">Project Two</h3>
-            <p class="text-sm text-gray-600 mt-2">Short description of project two.</p>
-            <div class="mt-4 flex gap-2">
-              <a href="#" class="text-primary text-sm">Live</a>
-              <a href="#" class="text-sm">Repo</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="border rounded-lg overflow-hidden">
-          <img src="https://placehold.co/600x400?text=Project+3" alt="Project 3" class="w-full h-40 object-cover" />
-          <div class="p-4">
-            <h3 class="font-semibold">Project Three</h3>
-            <p class="text-sm text-gray-600 mt-2">Short description of project three.</p>
-            <div class="mt-4 flex gap-2">
-              <a href="#" class="text-primary text-sm">Live</a>
-              <a href="#" class="text-sm">Repo</a>
-            </div>
-          </div>
-        </article>
+      <div id="projectsGrid" class="mt-6 grid gap-6 grid-cols-1 md:grid-cols-3" aria-live="polite">
+        <!-- Project cards will be injected here by JS -->
       </div>
+
+      <!-- Template used by JS to render a project card -->
+      <template id="projectTemplate">
+        <article class="border rounded-lg overflow-hidden bg-white shadow-sm">
+          <img data-src alt="Project image" class="w-full h-40 object-cover lazy-img" />
+          <div class="p-4">
+            <h3 class="font-semibold project-title"></h3>
+            <p class="text-sm text-gray-600 mt-2 project-desc"></p>
+            <div class="mt-4 flex gap-2">
+              <a class="text-primary text-sm project-live" target="_blank" rel="noopener">Live</a>
+              <a class="text-sm project-repo" target="_blank" rel="noopener">Repo</a>
+            </div>
+          </div>
+        </article>
+      </template>
     </section>
 
     <!-- Skills -->
@@ -125,7 +118,7 @@
       <h2 class="text-2xl font-semibold">Contact</h2>
       <p class="mt-2 text-gray-600">Want to work together? Reach out via email or social links below.</p>
       <div class="mt-6 grid md:grid-cols-2 gap-6">
-        <form id="contactForm" class="p-6 border rounded bg-white">
+        <form id="contactForm" class="p-6 border rounded bg-white" aria-label="Contact form">
           <label class="block text-sm">Name
             <input required name="name" class="mt-1 w-full border rounded px-3 py-2" />
           </label>

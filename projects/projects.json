@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Personal Portfolio",
+    "description": "This site — a responsive single-page portfolio scaffold built with Tailwind.",
+    "image": "https://placehold.co/600x400?text=Portfolio",
+    "live": "",
+    "repo": "https://github.com/ShreyanshGupta-WebDeveloper/portfolio",
+    "tech": ["HTML","Tailwind","JS"]
+  },
+  {
+    "title": "Weather App",
+    "description": "A small weather app using OpenWeatherMap API and client-side rendering.",
+    "image": "https://placehold.co/600x400?text=Weather+App",
+    "live": "",
+    "repo": "",
+    "tech": ["HTML","CSS","JS"]
+  },
+  {
+    "title": "Chat App (Demo)",
+    "description": "Realtime chat demo using WebSockets and a lightweight backend.",
+    "image": "https://placehold.co/600x400?text=Chat+App",
+    "live": "",
+    "repo": "",
+    "tech": ["Node","WebSocket","JS"]
+  },
+  {
+    "title": "Todo App",
+    "description": "A todo list with localStorage sync and drag & drop ordering.",
+    "image": "https://placehold.co/600x400?text=Todo+App",
+    "live": "",
+    "repo": "",
+    "tech": ["HTML","CSS","JS"]
+  },
+  {
+    "title": "Dev Blog",
+    "description": "A simple static blog template using markdown files and a build step.",
+    "image": "https://placehold.co/600x400?text=Dev+Blog",
+    "live": "",
+    "repo": "",
+    "tech": ["Static","Markdown"]
+  },
+  {
+    "title": "E-commerce Demo",
+    "description": "Small product listing/demo storefront to show UI and product filters.",
+    "image": "https://placehold.co/600x400?text=E-commerce",
+    "live": "",
+    "repo": "",
+    "tech": ["HTML","CSS","JS"]
+  }
+]
