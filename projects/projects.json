@@ -46,5 +46,61 @@
     "live": "",
     "repo": "",
     "tech": ["HTML","CSS","JS"]
+  },
+  {
+    "title": "Design System",
+    "description": "A reusable component library and style system for consistent UI across projects.",
+    "image": "https://placehold.co/600x400?text=Design+System",
+    "live": "",
+    "repo": "",
+    "tech": ["Figma","React","Tailwind"]
+  },
+  {
+    "title": "Analytics Dashboard",
+    "description": "Interactive data visualizations and admin dashboards built with charting libraries.",
+    "image": "https://placehold.co/600x400?text=Analytics+Dashboard",
+    "live": "",
+    "repo": "",
+    "tech": ["React","D3","API"]
+  },
+  {
+    "title": "SaaS Landing",
+    "description": "A high-converting SaaS landing page with signup flows and marketing components.",
+    "image": "https://placehold.co/600x400?text=SaaS+Landing",
+    "live": "",
+    "repo": "",
+    "tech": ["HTML","Tailwind","Netlify"]
+  },
+  {
+    "title": "Real-time Collaboration Tool",
+    "description": "A collaborative editor with presence indicators and operational transforms.",
+    "image": "https://placehold.co/600x400?text=Collab+Tool",
+    "live": "",
+    "repo": "",
+    "tech": ["WebSocket","CRDT","Node"]
+  },
+  {
+    "title": "Authentication Library",
+    "description": "A small, well-documented authentication helper library for Node/Express apps.",
+    "image": "https://placehold.co/600x400?text=Auth+Library",
+    "live": "",
+    "repo": "",
+    "tech": ["Node","Express","JWT"]
+  },
+  {
+    "title": "Static Site Boilerplate",
+    "description": "A performant boilerplate for static sites with SEO and performance optimizations.",
+    "image": "https://placehold.co/600x400?text=Static+Boilerplate",
+    "live": "",
+    "repo": "",
+    "tech": ["HTML","Tailwind","Lighthouse"]
+  },
+  {
+    "title": "Payments Integration Demo",
+    "description": "Demo showing secure payments flow integration with Stripe and webhooks.",
+    "image": "https://placehold.co/600x400?text=Payments+Demo",
+    "live": "",
+    "repo": "",
+    "tech": ["Stripe","Node","Security"]
   }
 ]
